@@ -1,0 +1,86 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Card{
+  margin-left: 22%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2% !important;
+  width: 55%;
+  height: 400px !important;
+  border: 5px solid rgb(59, 76, 170);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.body_card {
+  top: 100%;
+  margin: 10%;
+}
+
+.products{
+  display: grid;
+  justify-content: center;
+  align-items:center;
+  width:100%;
+  grid-template-columns: auto auto auto;
+  background-color: #282c34;
+  padding: 10px;
+  height: 90%;
+}
+
+.product{
+  width:25%;
+  height:25%;
+}
+
+.prod_container{
+  padding-top: 2%;
+}
+
+h1{
+  color: black;
+}
+
+.card{
+  margin-bottom: 10%;
+  cursor: pointer;
+}
+
+.body{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:center;
+}
+
+.Ads{
+  width:15% !important;
+  margin-top: 2%;
+}
+
+.container, .container-sm {
+  max-width: 100% !important; 
+  padding: 4 1%;
+}
+
+.Buttons_container{
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+}
+
+
+.Buttons_container button{
+  flex: 1; 
+  margin: 0 5%;
+}
