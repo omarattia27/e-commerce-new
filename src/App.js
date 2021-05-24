@@ -12,15 +12,9 @@ function App(state) {
   return (
     <Router>
       <Switch>
-        <Route path="/Home">
-          <Home/>
-        </Route>
-        <Route path="/Cart">
-          <Cart/>
-        </Route>
-        <Route path="/LogIn">
-          <LogIn/>
-        </Route>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/Cart" component={Cart} />
+        <Route exact path="/LogIn" component={LogIn} />
       </Switch>
     </Router>
   );

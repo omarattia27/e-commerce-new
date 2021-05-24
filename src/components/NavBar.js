@@ -1,14 +1,19 @@
 import { Navbar, Nav, Container } from 'react-bootstrap';
+import { createBrowserHistory } from 'history';
+import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 
-function NavBar() {
+const history = createBrowserHistory();
 
+function NavBar() {
     const [loggedIn, setLoggedIn] = useState(false);
 
     return (
         <Container className='container' fixed={true}>
             <Navbar max-width="100%" className='navbar' collapseOnSelect expand="lg" bg="dark" variant="dark">
-                <Navbar.Brand href="/home" className='Logo'>OMA</Navbar.Brand>
+                <Link to="/">
+                    <span>Oma</span>
+                </Link>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
@@ -19,8 +24,8 @@ function NavBar() {
                                 aria-describedby="search-addon" />
                             <button type="button" class="btn btn-outline-primary">search</button>
                         </div></Nav.Link>
-                        <Nav.Link href="/cart">Cart</Nav.Link>
-                        {!loggedIn ? <Nav.Link href="/LogIn">Log In</Nav.Link> : <Nav.Link href="/LogIn">Log Out</Nav.Link>}
+                        <Link to="/Cart">Cart</Link>
+                        {!loggedIn ? <Link to="/Login">Log In</Link> : <Link to="/LogIn">Log Out</Link>}
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

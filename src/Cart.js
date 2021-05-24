@@ -4,6 +4,7 @@ import { Add, Remove } from './redux/actions';
 import { connect } from 'react-redux'
 
 function Cart(props) {
+    console.log(props.checkOut.length);
     return (
         <div className="App">
             <header className="App-header">
