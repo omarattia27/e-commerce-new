@@ -7,7 +7,7 @@ const initialState = {
   export function appReducer(state = initialState, action) {
     switch (action.type) {
       case 'ADD': {
-        //console.log(state.checkOut);
+        console.log(state.checkOut);
         return {
             ...state,
           checkOut: [
@@ -18,17 +18,11 @@ const initialState = {
         }
       }
 
-      case 'Product_Removed': {
+      case 'REMOVE': {
+        console.log("Found! ",state.checkOut.findIndex(x => x.id === action.playload.id));
         return {
             ...state,
-          checkOut: [
-            ...state.checkOut,
-            {
-              id: action.playload.id,
-              price: action.payload.price,
-            }
-          ],
-          totalCost: state.totalCost-action.playload.price
+            ...state.checkOut.splice(state.checkOut.findIndex(x => x.id === action.playload.id),1)
         }
       }
       

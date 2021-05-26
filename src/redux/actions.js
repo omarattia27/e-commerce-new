@@ -9,6 +9,6 @@ export const Add = (val,checkout)=> {
 export const Remove = (id)=> {
     return{
        type: "REMOVE",
-       payload: {id: id}
+       playload: {id: id}
     }
 }

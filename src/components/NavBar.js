@@ -12,7 +12,7 @@ function NavBar() {
         <Container className='container' fixed={true}>
             <Navbar max-width="100%" className='navbar' collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Link to="/">
-                    <span>Oma</span>
+                    <span>OMA</span>
                 </Link>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">

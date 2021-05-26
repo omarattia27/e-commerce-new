@@ -15,7 +15,8 @@
   align-items: center;
   margin-top: 2% !important;
   width: 55%;
-  height: 400px !important;
+  height: auto;
+  min-height: 400px !important;
   border: 5px solid rgb(59, 76, 170);
   border-radius: 10px;
   display: flex;
@@ -83,4 +84,21 @@ h1{
 .Buttons_container button{
   flex: 1; 
   margin: 0 5%;
+}
+
+.cart_item{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+#cart_item_button{
+  right: 0% !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+.Log_In_H{
+  font-size: 25;
+  color: white !important;
 }

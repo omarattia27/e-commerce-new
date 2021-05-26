@@ -2,9 +2,11 @@ import './App.css';
 import NavBar from './components/NavBar';
 import { Add, Remove } from './redux/actions';
 import { connect } from 'react-redux'
+import React,{useEffect} from 'react';
+import { Link } from 'react-router-dom';
 
 function Cart(props) {
-    console.log(props.checkOut.length);
+
     return (
         <div className="App">
             <header className="App-header">
@@ -16,10 +18,11 @@ function Cart(props) {
                                 key = val.id;
                                 console.log(val);
                                 return (
-                                    <div>
-                                        <h1>{val.title}</h1>
-                                        <h1>{key}</h1>
-                                        <button type="button" class="btn btn-outline-primary" >remove</button>
+                                    <div className="cart_item">
+                                        <p>{val.title}</p>
+                                        <Link to="/cart">
+                                           <button type="button" id="cart_item_button"  class="btn btn-outline-primary" onClick={()=>props.Remove(val.id)}>X</button>
+                                        </Link>
                                     </div>
                                 )
                             })}

@@ -4,7 +4,7 @@ import { Add, Remove } from './redux/actions';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
 
-function LogIn(state) {
+function createAccount(state) {
     return (
         <div className="App">
             <header className="App-header">
@@ -12,7 +12,7 @@ function LogIn(state) {
                 <div>
                     <div className='body_cart'>
                         <div className="Card">
-                            <h1 className="Log_In_H">Log In</h1>
+                            <h1 className="Log_In_H">Sign Up</h1>
                             <p></p>
                             <input type='text' placeholder='user name'></input>
                             <p></p>
@@ -20,10 +20,11 @@ function LogIn(state) {
                             <p></p>
                             <p></p>
 
-                            <button type="button" class="btn btn-outline-primary">Log In</button>
+                            <button type="button" class="btn btn-outline-primary">Sign up</button>
+
                             <p></p>
-                            <Link to='/createAccount'>
-                                Sign Up
+                            <Link to='/LogIn'>
+                                Already have an account?
                             </Link>
                         </div>
                     </div>
@@ -44,4 +45,4 @@ const mapDispatchToProps = {
     Remove
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(LogIn);
+export default connect(mapStateToProps, mapDispatchToProps)(createAccount);
