@@ -37,9 +37,8 @@ function NavBar(props) {
                     </Nav.Link>
 
                     <Nav>
-                        <Link to="/Cart">Cart</Link><a className="space">_</a>
                         
-                        {!props.LoggedIn ? <Link to="/Login">Log In</Link> : <Link to="/Login">{props.user}</Link>}
+                        {!props.LoggedIn ? <Link to="/Login">Log In</Link> : <div><Link to="/Cart">Cart</Link> <a className="space">_</a> <Link to="/Login">{props.user}</Link></div>}
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

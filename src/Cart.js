@@ -26,7 +26,7 @@ function Cart(props) {
                     <div className='body_cart'>
                         <div className="Card">
                             {!props.checkOut.length ? <p></p>: totalCost}
-                            {!props.checkOut.length ? <p>Empty cart</p> : props.checkOut.map((val, key) => {
+                            {!props.checkOut.length ? <p>{!props.user ? <p>You are not logged in</p> : <p>Empty cart</p>}</p> : props.checkOut.map((val, key) => {
                                 key = val._id;
                                 console.log(val);
                                 return (
@@ -52,6 +52,7 @@ function mapStateToProps(state) {
     return {
         products_to_view: state.products_to_view,
         checkOut: state.checkOut,
+        user: state.user,
     };
 }
 
