@@ -1,13 +1,15 @@
 const initialState = {
     checkOut: [],
     totalCost: 0,
-    products_to_view: [{Artist:'Omar', id:'1', title:'Flower', type:'Photography', date:'2020', image:'http://', price:180},{Artist:'Omar', id:'2', title:'Flower2', type:'Photography', date:'2020', image:'http://', price:100},{Artist:'Omar', id:'3', title:'Flower3', type:'Photography', date:'2020', image:'http://', price:1100},{Artist:'Omar', id:'4', title:'Flower4', type:'Photography', date:'2020', image:'http://', price:200},{Artist:'Omar', id:'5', title:'Flower5', type:'Photography', date:'2020', image:'http://', price:150}],
+    LoggedIn: '',
+    user:'',
+    products_to_view: [],
 }
   
   export function appReducer(state = initialState, action) {
     switch (action.type) {
       case 'ADD': {
-        console.log(state.checkOut);
+        //console.log(state.checkOut);
         return {
             ...state,
           checkOut: [
@@ -19,10 +21,42 @@ const initialState = {
       }
 
       case 'REMOVE': {
-        console.log("Found! ",state.checkOut.findIndex(x => x.id === action.playload.id));
+        console.log("CheckOut: ",state.checkOut)
+        console.log("Found! ",state.checkOut.findIndex(x => x._id === action.playload.id));
         return {
             ...state,
-            ...state.checkOut.splice(state.checkOut.findIndex(x => x.id === action.playload.id),1)
+            ...state.checkOut.splice(state.checkOut.findIndex(x => x._id === action.playload.id),1)
+        }
+      }
+
+      case 'LOGGEDIN': {
+        return {
+            checkOut: state.checkOut,
+            totalCost: state.totalCost,
+            LoggedIn: action.playload[0],
+            products_to_view: state.products_to_view,
+            user:action.playload[1]
+        }
+      }
+
+      case 'LOGGEDOUT': {
+        return {
+            checkOut: state.checkOut,
+            totalCost: state.totalCost,
+            LoggedIn: '',
+            products_to_view: state.products_to_view,
+            user:''
+        }
+      }
+      
+      case 'PRODUCTS': {
+        console.log("products updated: ",action.products)
+        return {
+            checkOut: state.checkOut,
+            totalCost: state.totalCost,
+            LoggedIn: state.LoggedIn,
+            products_to_view: action.playload,
+            user:state.user
         }
       }
       

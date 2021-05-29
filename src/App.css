@@ -55,6 +55,7 @@ h1{
 .card{
   margin-bottom: 10%;
   cursor: pointer;
+  background-color: #282c34 !important;
 }
 
 .body{
@@ -101,4 +102,8 @@ h1{
 .Log_In_H{
   font-size: 25;
   color: white !important;
+}
+
+.space{
+  color: #343a40 !important;
 }
